@@ -11,8 +11,7 @@ export function createFighterPreview(fighter, position) {
   const imageElement = fighter ? createFighterImage(fighter) : '';
   const infoElement = fighter ? createFighterInfoBlock(fighter) : '';
 
-  fighterElement.append(imageElement);
-  fighterElement.append(infoElement);
+  fighterElement.append(imageElement, infoElement);
 
   return fighterElement;
 }
@@ -57,10 +56,7 @@ function createFighterInfoBlock(fighter) {
     return itemElement;
   }
 
-  infoBlock.append(nameElement);
-  infoBlock.append(createInfoItem('health'));
-  infoBlock.append(createInfoItem('attack'));
-  infoBlock.append(createInfoItem('defense'));
+  infoBlock.append(nameElement, createInfoItem('health'), createInfoItem('attack'), createInfoItem('defense'));
 
   return infoBlock;
 }
